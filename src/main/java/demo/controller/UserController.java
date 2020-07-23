@@ -4,6 +4,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.security.Principal;
 
@@ -25,5 +26,10 @@ public class UserController {
         SecurityContext context = SecurityContextHolder.getContext();
         System.out.println(context.getAuthentication().getName());
         return "admin";
+    }
+
+    @GetMapping("/error")
+    public String error(){
+        return "error";
     }
 }

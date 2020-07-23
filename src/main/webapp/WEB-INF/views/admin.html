@@ -18,5 +18,9 @@
 <div sec:authorize="isAuthenticated()">
     <a th:href="@{/}">Home</a> | <a th:href="@{/logout}">Logout</a>
 </div>
+
+<!--<form th:action="@{/logout}" method="post">-->
+<!--    <button>Logout</button>-->
+<!--</form>-->
 </body>
 </html>

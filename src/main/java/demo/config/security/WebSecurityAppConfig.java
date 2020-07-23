@@ -32,6 +32,12 @@ public class WebSecurityAppConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .and()
-                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"));
+                .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+
+                //Nếu sử dụng cách dưới thì phải sử dụng logout ở method = post (xem ở index.html)
+//                .logout().logoutSuccessUrl("/").permitAll()
+                .and()
+                .exceptionHandling()
+                .accessDeniedPage("/error");
     }
 }
